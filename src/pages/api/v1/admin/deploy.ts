@@ -2,11 +2,12 @@
 
 import type { APIRoute } from "astro";
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async (context) => {
   try {
+    console.log(context.locals.runtime.env.DEPOLY_URL);
+
     const response = await fetch(
-      //note: this is the deploy webhook it should be set by an env var or whatever the astro version of this is.
-      "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/939fb54f-5773-47b8-8729-f3c7ba76677d",
+      context.locals.runtime.env.DEPOLY_URL.toString(),
       {
         method: "POST",
       }
