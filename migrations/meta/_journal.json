@@ -134,6 +134,76 @@
       "when": 1742460271885,
       "tag": "0018_illegal_lady_mastermind",
       "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "6",
+      "when": 1742461118654,
+      "tag": "0019_superb_albert_cleary",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "6",
+      "when": 1742461806489,
+      "tag": "0020_hard_mentor",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "6",
+      "when": 1742462054507,
+      "tag": "0021_futuristic_maximus",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "6",
+      "when": 1742463273919,
+      "tag": "0022_clumsy_marten_broadcloak",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "6",
+      "when": 1742463592954,
+      "tag": "0023_sticky_riptide",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "6",
+      "when": 1742463810898,
+      "tag": "0024_next_spectrum",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "6",
+      "when": 1742465158960,
+      "tag": "0025_nice_madripoor",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "6",
+      "when": 1742465303845,
+      "tag": "0026_gifted_mentallo",
+      "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "6",
+      "when": 1742465374551,
+      "tag": "0027_round_mulholland_black",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "6",
+      "when": 1742465405079,
+      "tag": "0028_typical_psynapse",
+      "breakpoints": true
     }
   ]
 }
