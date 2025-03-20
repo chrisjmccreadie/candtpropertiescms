@@ -1,6 +1,6 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { relations } from "drizzle-orm";
-import * as cacheRequests from './cacheRequests';
+import * as cacheRequests from "./cacheRequests";
 
 import { isAdminOrEditor } from "../config-helpers";
 import type { ApiConfig } from "../routes";
@@ -12,17 +12,15 @@ export const icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox
 export const tableName = "cacheStats";
 export const name = "Cache Stats";
 
-export const route = "cache-stats";
-
 export const definition = {
   id: text("id").primaryKey(),
   url: text("url").notNull(),
-  createdOn: integer('createdOn').notNull(),
-  executionTime: integer('executionTime').notNull(),
+  createdOn: integer("createdOn").notNull(),
+  executionTime: integer("executionTime").notNull(),
 };
 
 export const table = sqliteTable(tableName, {
-  ...definition
+  ...definition,
 });
 
 export const relation = relations(table, ({ one }) => ({
@@ -42,7 +40,7 @@ export const access: ApiConfig["access"] = {
 };
 
 export const fields: ApiConfig["fields"] = {
-  body:{ 
-    type:'textArea'
-  }
+  body: {
+    type: "textArea",
+  },
 };
