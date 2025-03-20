@@ -70,7 +70,7 @@ export const access: ApiConfig["access"] = {
       },
     },
     password: {
-      read:false,
+      read: false,
       update: isAdminOrUser,
     },
     role: {

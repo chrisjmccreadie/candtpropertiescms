@@ -33,20 +33,7 @@ export const fields: ApiConfig["fields"] = {
   body: {
     type: "textArea",
   },
-  image: {
-    type: "file",
-    bucket: (ctx) => ctx.locals.runtime.env.R2,
-    path: "images",
-  },
-  images: {
-    type: "file[]",
-    bucket: (ctx) => ctx.locals.runtime.env.R2,
-    path: "images",
-  },
-  tags: {
-    type: "string[]",
-  },
-  updatedOn: {
-    type: "datetime",
+  urlimage: {
+    type: "textField",
   },
 };

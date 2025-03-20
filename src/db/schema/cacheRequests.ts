@@ -13,6 +13,8 @@ export const icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
 </svg>
 `;
+export const route = "cacheRequests";
+
 export const tableName = "cacheRequests";
 export const name = "Cache Requests";
 

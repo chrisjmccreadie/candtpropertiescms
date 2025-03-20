@@ -11,6 +11,7 @@ export const icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox
 `;
 export const tableName = "cacheStats";
 export const name = "Cache Stats";
+export const route = "cacheStats";
 
 export const definition = {
   id: text("id").primaryKey(),

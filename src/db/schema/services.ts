@@ -3,7 +3,7 @@ import { relations, type InferSelectModel } from "drizzle-orm";
 import { auditSchema } from "@schema/audit";
 import type { ApiConfig } from "db/routes";
 
-export const tableName = "work";
+export const tableName = "services";
 export const name = "Services";
 export const route = "services";
 export const icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -25,26 +25,7 @@ export const fields: ApiConfig["fields"] = {
   id: {
     type: "id",
   },
-  title: {
+  service: {
     type: "textField",
-  },
-  body: {
-    type: "textArea",
-  },
-  image: {
-    type: "file",
-    bucket: (ctx) => ctx.locals.runtime.env.R2,
-    path: "images",
-  },
-  images: {
-    type: "file[]",
-    bucket: (ctx) => ctx.locals.runtime.env.R2,
-    path: "images",
-  },
-  tags: {
-    type: "string[]",
-  },
-  updatedOn: {
-    type: "datetime",
   },
 };
