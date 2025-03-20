@@ -12,8 +12,6 @@ export const icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox
 export const tableName = "categories";
 export const name = "Categories";
 
-export const route = "categories";
-
 export const definition = {
   id: text("id").primaryKey(),
   title: text("title").notNull(),
@@ -39,7 +37,7 @@ export const access: ApiConfig["access"] = {
 };
 
 export const fields: ApiConfig["fields"] = {
-  body:{ 
-    type:'textArea'
-  }
+  body: {
+    type: "textArea",
+  },
 };

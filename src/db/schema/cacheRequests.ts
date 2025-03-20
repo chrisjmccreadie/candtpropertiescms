@@ -1,4 +1,9 @@
-import { integer, sqliteTable, text, uniqueIndex } from "drizzle-orm/sqlite-core";
+import {
+  integer,
+  sqliteTable,
+  text,
+  uniqueIndex,
+} from "drizzle-orm/sqlite-core";
 
 import { isAdminOrEditor } from "../config-helpers";
 import type { ApiConfig } from "../routes";
@@ -11,23 +16,25 @@ export const icon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox
 export const tableName = "cacheRequests";
 export const name = "Cache Requests";
 
-export const route = "cache-requests";
-
 export const definition = {
   id: text("id").primaryKey(),
   url: text("url").notNull().unique().default(""),
-  createdOn: integer('createdOn'),
-  updatedOn: integer('updatedOn'),
-  deletedOn: integer('deletedOn'),
+  createdOn: integer("createdOn"),
+  updatedOn: integer("updatedOn"),
+  deletedOn: integer("deletedOn"),
 };
 
-export const table = sqliteTable(tableName, {
-  ...definition,
-}, (table) => {
-  return {
-    urlIdx: uniqueIndex("url").on(table.url),
-  };
-});
+export const table = sqliteTable(
+  tableName,
+  {
+    ...definition,
+  },
+  (table) => {
+    return {
+      urlIdx: uniqueIndex("url").on(table.url),
+    };
+  }
+);
 
 export const access: ApiConfig["access"] = {
   operation: {
@@ -39,7 +46,7 @@ export const access: ApiConfig["access"] = {
 };
 
 export const fields: ApiConfig["fields"] = {
-  // body:{ 
+  // body:{
   //   type:'textArea'
   // }
 };
