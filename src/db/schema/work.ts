@@ -16,8 +16,11 @@ export const definition = {
   id: text("id").primaryKey(),
   userId: text("userId").notNull(),
   title: text("title").notNull(),
+  summary: text("summary"),
   body: text("body").notNull(),
   image: text("image"),
+  url: text("url"),
+  pageName: text("pageName"),
   createdOn: text("createdOn"),
   updatedOn: text("updatedOn"),
 };
@@ -138,6 +141,9 @@ export const fields: ApiConfig["fields"] = {
     type: "textField",
   },
   body: {
+    type: "textArea",
+  },
+  summary: {
     type: "textArea",
   },
   image: {
