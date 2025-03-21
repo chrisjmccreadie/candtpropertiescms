@@ -7,14 +7,12 @@ import * as users from "@schema/users";
 import * as userSessions from "@schema/userSessions";
 import * as cacheRequests from "@schema/cacheRequests";
 import * as cacheStats from "@schema/cacheStats";
-import * as work from "@schema/work";
-import * as services from "@schema/services";
+import * as properties from "@schema/properties";
 
 export const tableSchemas = {
   users,
   userSessions,
   cacheRequests,
   cacheStats,
-  work,
-  services,
+  properties,
 };

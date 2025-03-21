@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "53e25ec1-8095-4076-bcf2-d955c6202929",
-  "prevId": "2ec67d26-296e-4a30-9d63-c4be7a9ee994",
+  "id": "793eee21-8c9b-4ee2-9f56-78e121a5cd70",
+  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "cacheRequests": {
       "name": "cacheRequests",
@@ -22,13 +22,6 @@
           "autoincrement": false,
           "default": "''"
         },
-        "deletedOn": {
-          "name": "deletedOn",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
         "createdOn": {
           "name": "createdOn",
           "type": "integer",
@@ -38,6 +31,13 @@
         },
         "updatedOn": {
           "name": "updatedOn",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "deletedOn": {
+          "name": "deletedOn",
           "type": "integer",
           "primaryKey": false,
           "notNull": false,
@@ -101,143 +101,13 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "categories": {
-      "name": "categories",
+    "properties": {
+      "name": "properties",
       "columns": {
         "id": {
           "name": "id",
           "type": "text",
           "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "title": {
-          "name": "title",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "body": {
-          "name": "body",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "createdOn": {
-          "name": "createdOn",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "updatedOn": {
-          "name": "updatedOn",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "categoriesToPosts": {
-      "name": "categoriesToPosts",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "postId": {
-          "name": "postId",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "categoryId": {
-          "name": "categoryId",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "createdOn": {
-          "name": "createdOn",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "updatedOn": {
-          "name": "updatedOn",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "categoriesToPosts_postId_posts_id_fk": {
-          "name": "categoriesToPosts_postId_posts_id_fk",
-          "tableFrom": "categoriesToPosts",
-          "tableTo": "posts",
-          "columnsFrom": [
-            "postId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        },
-        "categoriesToPosts_categoryId_categories_id_fk": {
-          "name": "categoriesToPosts_categoryId_categories_id_fk",
-          "tableFrom": "categoriesToPosts",
-          "tableTo": "categories",
-          "columnsFrom": [
-            "categoryId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {
-        "categoriesToPosts_postId_categoryId_pk": {
-          "columns": [
-            "postId",
-            "categoryId"
-          ],
-          "name": "categoriesToPosts_postId_categoryId_pk"
-        }
-      },
-      "uniqueConstraints": {}
-    },
-    "comments": {
-      "name": "comments",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "body": {
-          "name": "body",
-          "type": "text",
-          "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
@@ -248,65 +118,6 @@
           "notNull": true,
           "autoincrement": false
         },
-        "postId": {
-          "name": "postId",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "tags": {
-          "name": "tags",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "createdOn": {
-          "name": "createdOn",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "updatedOn": {
-          "name": "updatedOn",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        }
-      },
-      "indexes": {
-        "commentsUserIdIndex": {
-          "name": "commentsUserIdIndex",
-          "columns": [
-            "userId"
-          ],
-          "isUnique": false
-        },
-        "commentsPostIdIndex": {
-          "name": "commentsPostIdIndex",
-          "columns": [
-            "postId"
-          ],
-          "isUnique": false
-        }
-      },
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "posts": {
-      "name": "posts",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
         "title": {
           "name": "title",
           "type": "text",
@@ -314,18 +125,67 @@
           "notNull": true,
           "autoincrement": false
         },
-        "body": {
-          "name": "body",
+        "address": {
+          "name": "address",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
-        "userId": {
-          "name": "userId",
+        "summary": {
+          "name": "summary",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "price": {
+          "name": "price",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
+          "autoincrement": false
+        },
+        "priceFrequency": {
+          "name": "priceFrequency",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "propterySize": {
+          "name": "propterySize",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "propteryBeds": {
+          "name": "propteryBeds",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "propteryBaths": {
+          "name": "propteryBaths",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "saleType": {
+          "name": "saleType",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "propteryType": {
+          "name": "propteryType",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
           "autoincrement": false
         },
         "image": {
@@ -335,15 +195,15 @@
           "notNull": false,
           "autoincrement": false
         },
-        "images": {
-          "name": "images",
+        "url": {
+          "name": "url",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
         },
-        "tags": {
-          "name": "tags",
+        "pageName": {
+          "name": "pageName",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
@@ -364,15 +224,7 @@
           "autoincrement": false
         }
       },
-      "indexes": {
-        "postUserIdIndex": {
-          "name": "postUserIdIndex",
-          "columns": [
-            "userId"
-          ],
-          "isUnique": false
-        }
-      },
+      "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
@@ -461,6 +313,13 @@
         },
         "lastName": {
           "name": "lastName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "profile": {
+          "name": "profile",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
